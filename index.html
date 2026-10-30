@@ -5,14 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BugAgent AI - Autonomous QA Agent & Bug Reporter for Jira</title>
   <meta name="description" content="Automate software defect reporting. Capture screens, detect network errors, analyze with Google Gemini and OpenAI Vision, and create rich Jira tickets in seconds.">
+  <link rel="canonical" href="https://cvqprs.github.io/jira-bug-snapper-site/">
+  <link rel="alternate" hreflang="x-default" href="https://cvqprs.github.io/jira-bug-snapper-site/">
+  <link rel="alternate" hreflang="en" href="https://cvqprs.github.io/jira-bug-snapper-site/">
+  <link rel="alternate" hreflang="de" href="https://cvqprs.github.io/jira-bug-snapper-site/de/">
+  <link rel="alternate" hreflang="pl" href="https://cvqprs.github.io/jira-bug-snapper-site/pl/">
+  <link rel="alternate" hreflang="es" href="https://cvqprs.github.io/jira-bug-snapper-site/es/">
+  <link rel="alternate" hreflang="fr" href="https://cvqprs.github.io/jira-bug-snapper-site/fr/">
+  <link rel="alternate" hreflang="ja" href="https://cvqprs.github.io/jira-bug-snapper-site/ja/">
+
   <link rel="icon" type="image/png" href="assets/icon-128.png">
   <meta property="og:title" content="BugAgent AI - Autonomous QA Agent & Bug Reporter for Jira">
   <meta property="og:description" content="Capture screens, detect network crashes, analyze with Gemini & OpenAI, and create Jira tickets instantly.">
   <meta property="og:image" content="assets/promo-marquee-1400x560.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BugAgent AI - Autonomous QA Agent for Jira">
+  <meta name="twitter:title" content="BugAgent AI - Autonomous QA Agent & Bug Reporter for Jira">
+  <meta name="twitter:description" content="Capture screens, detect network crashes, analyze with Gemini & OpenAI, and create Jira tickets instantly.">
   <meta name="twitter:image" content="assets/promo-marquee-1400x560.jpg">
+
   <style>
     :root {
       --jira-blue: #0c66e4;
@@ -48,10 +59,10 @@
       --radius-md: 10px;
       --radius-lg: 16px;
 
-      --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06);
-      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
     }
 
     * {
@@ -60,35 +71,33 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: var(--font-family);
       background-color: var(--bg-app);
       color: var(--text-main);
-      font-size: 15px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Container */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Header & Navigation */
     header {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-light);
     }
 
     .navbar {
@@ -96,6 +105,7 @@
       align-items: center;
       justify-content: space-between;
       height: 72px;
+      gap: 16px;
     }
 
     .brand {
@@ -103,13 +113,12 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--text-main);
     }
 
     .brand img {
-      width: 38px;
-      height: 38px;
-      border-radius: var(--radius-sm);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
     }
 
     .brand-text {
@@ -118,137 +127,206 @@
     }
 
     .brand-title {
+      font-size: 18px;
       font-weight: 700;
-      font-size: 17px;
       color: var(--text-main);
       letter-spacing: -0.01em;
     }
 
     .brand-badge {
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 600;
       color: var(--jira-blue);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 28px;
       list-style: none;
     }
 
     .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 500;
       font-size: 14px;
-      transition: color 0.15s ease;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.15s;
     }
 
     .nav-links a:hover {
       color: var(--jira-blue);
     }
 
-    /* Buttons */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Language Dropdown */
+    .lang-selector {
+      position: relative;
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      background: var(--surface-subtle);
+      border-color: var(--border-focus);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+      min-width: 145px;
+      padding: 6px;
+      display: none;
+      z-index: 1000;
+    }
+
+    .lang-menu.show {
+      display: block;
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .lang-option:hover {
+      background: var(--surface-subtle);
+      color: var(--jira-blue);
+    }
+
+    .lang-option.active {
+      background: var(--jira-blue-subtle);
+      color: var(--jira-blue);
+      font-weight: 700;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 20px;
+      padding: 10px 18px;
       font-size: 14px;
       font-weight: 600;
       border-radius: var(--radius-sm);
-      text-decoration: none;
-      transition: all 0.2s ease;
       cursor: pointer;
       border: 1px solid transparent;
+      transition: all 0.15s ease;
+      text-decoration: none;
     }
 
     .btn-primary {
       background-color: var(--jira-blue);
       color: #ffffff;
-      box-shadow: 0 2px 4px rgba(12, 102, 228, 0.2);
+      box-shadow: var(--shadow-sm);
     }
 
     .btn-primary:hover {
       background-color: var(--jira-blue-hover);
-      box-shadow: 0 4px 8px rgba(12, 102, 228, 0.28);
+      color: #ffffff;
       transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
 
     .btn-outline {
-      background-color: var(--surface-card);
-      color: var(--text-secondary);
+      background-color: #ffffff;
+      color: var(--text-main);
       border-color: var(--border-medium);
     }
 
     .btn-outline:hover {
       background-color: var(--surface-subtle);
-      border-color: var(--jira-blue);
+      border-color: var(--border-focus);
       color: var(--jira-blue);
     }
 
     .btn-lg {
-      padding: 14px 28px;
+      padding: 14px 26px;
       font-size: 16px;
       border-radius: var(--radius-md);
     }
 
-    /* Hero Section */
     .hero {
-      padding: 80px 0 60px;
+      padding: 72px 0 60px;
       text-align: center;
-      position: relative;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-app) 100%);
     }
 
     .badge-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       padding: 6px 14px;
       background-color: var(--jira-blue-subtle);
-      color: var(--jira-blue);
       border: 1px solid var(--jira-blue-border);
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--jira-blue);
       margin-bottom: 24px;
     }
 
     .hero-title {
-      font-size: 48px;
+      font-size: 52px;
       font-weight: 800;
       line-height: 1.15;
-      letter-spacing: -0.03em;
       color: var(--text-main);
       max-width: 900px;
       margin: 0 auto 20px;
+      letter-spacing: -0.02em;
     }
 
     .hero-title span {
-      background: linear-gradient(135deg, #0c66e4 0%, #0284c7 100%);
+      background: linear-gradient(135deg, var(--jira-blue) 0%, #0052cc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
       font-size: 19px;
-      color: var(--text-muted);
-      max-width: 740px;
+      color: var(--text-secondary);
+      max-width: 760px;
       margin: 0 auto 36px;
-      font-weight: 400;
+      line-height: 1.55;
     }
 
     .hero-actions {
       display: flex;
-      align-items: center;
       justify-content: center;
       gap: 16px;
-      margin-bottom: 48px;
+      margin-bottom: 50px;
       flex-wrap: wrap;
     }
 
@@ -257,20 +335,19 @@
       margin: 0 auto;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-xl);
-      overflow: hidden;
       border: 1px solid var(--border-medium);
-      background-color: var(--surface-card);
-      position: relative;
+      background-color: #ffffff;
+      overflow: hidden;
     }
 
     .browser-bar {
-      height: 40px;
-      background-color: var(--surface-subtle);
+      height: 38px;
+      background-color: #f1f5f9;
       border-bottom: 1px solid var(--border-light);
       display: flex;
       align-items: center;
       padding: 0 16px;
-      gap: 8px;
+      gap: 12px;
     }
 
     .browser-dots {
@@ -279,27 +356,28 @@
     }
 
     .browser-dot {
-      width: 11px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
     }
 
-    .dot-red { background-color: #ff5f56; }
-    .dot-yellow { background-color: #ffbd2e; }
-    .dot-green { background-color: #27c93f; }
+    .dot-red { background-color: #ef4444; }
+    .dot-yellow { background-color: #f59e0b; }
+    .dot-green { background-color: #10b981; }
 
     .browser-url-bar {
       flex: 1;
       height: 24px;
-      background: #ffffff;
+      background-color: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: 4px;
-      margin: 0 24px;
-      display: flex;
-      align-items: center;
-      padding: 0 12px;
       font-size: 11px;
       color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     .hero-mockup-wrapper img {
@@ -308,9 +386,8 @@
       display: block;
     }
 
-    /* Section Styles */
     .section {
-      padding: 80px 0;
+      padding: 90px 0;
     }
 
     .section-header {
@@ -320,110 +397,114 @@
     }
 
     .section-tag {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--jira-blue);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       margin-bottom: 8px;
     }
 
     .section-title {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 800;
-      letter-spacing: -0.02em;
       color: var(--text-main);
+      letter-spacing: -0.01em;
       margin-bottom: 14px;
     }
 
     .section-desc {
-      color: var(--text-muted);
-      font-size: 16px;
+      font-size: 17px;
+      color: var(--text-secondary);
     }
 
-    /* Features Grid */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
 
     .feature-card {
-      background: var(--surface-card);
+      background-color: var(--surface-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
-      padding: 32px;
-      box-shadow: var(--shadow-sm);
+      padding: 32px 26px;
       transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      box-shadow: var(--shadow-sm);
     }
 
     .feature-card:hover {
-      border-color: var(--jira-blue-border);
+      transform: translateY(-3px);
       box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
+      border-color: var(--jira-blue-border);
     }
 
     .feature-icon-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-sm);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
       background-color: var(--jira-blue-subtle);
       color: var(--jira-blue);
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 20px;
     }
 
     .feature-card h3 {
       font-size: 18px;
       font-weight: 700;
+      margin-bottom: 10px;
       color: var(--text-main);
     }
 
     .feature-card p {
-      color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
     }
 
-    /* Interactive Showcase / Screenshots */
     .showcase-tabs {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 32px;
+      gap: 10px;
+      margin-bottom: 28px;
       flex-wrap: wrap;
     }
 
     .tab-btn {
-      padding: 10px 20px;
+      padding: 10px 18px;
       border: 1px solid var(--border-medium);
       background: var(--surface-card);
-      color: var(--text-secondary);
       border-radius: var(--radius-sm);
+      font-size: 13.5px;
       font-weight: 600;
+      color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 14px;
+      transition: all 0.15s;
+      font-family: inherit;
     }
 
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--jira-blue);
-      color: #ffffff;
+    .tab-btn:hover {
       border-color: var(--jira-blue);
+      color: var(--jira-blue);
+    }
+
+    .tab-btn.active {
+      background: var(--jira-blue);
+      border-color: var(--jira-blue);
+      color: #ffffff;
+      box-shadow: var(--shadow-sm);
     }
 
     .showcase-display {
-      max-width: 1080px;
+      max-width: 1040px;
       margin: 0 auto;
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
       border: 1px solid var(--border-medium);
-      background-color: var(--surface-card);
+      box-shadow: var(--shadow-xl);
+      background: #ffffff;
+      overflow: hidden;
     }
 
     .showcase-display img {
@@ -436,173 +517,177 @@
       display: block;
     }
 
-    /* Pricing Section */
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
       max-width: 860px;
       margin: 0 auto;
     }
 
     .pricing-card {
-      background: var(--surface-card);
+      background-color: var(--surface-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
       padding: 40px;
-      box-shadow: var(--shadow-sm);
       position: relative;
+      box-shadow: var(--shadow-md);
       display: flex;
       flex-direction: column;
     }
 
     .pricing-card.featured {
       border: 2px solid var(--jira-blue);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-xl);
     }
 
     .popular-tag {
       position: absolute;
-      top: -14px;
-      right: 28px;
+      top: -12px;
+      right: 24px;
       background: var(--jira-blue);
       color: #ffffff;
-      padding: 4px 12px;
-      border-radius: 999px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.05em;
       text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 9999px;
     }
 
     .pricing-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
     }
 
     .price {
+      margin: 22px 0 26px;
       display: flex;
       align-items: baseline;
-      gap: 4px;
-      margin: 20px 0 24px;
+      gap: 6px;
     }
 
     .price .amount {
-      font-size: 44px;
+      font-size: 42px;
       font-weight: 800;
       color: var(--text-main);
-      line-height: 1;
     }
 
     .price .period {
+      font-size: 15px;
       color: var(--text-muted);
-      font-size: 14px;
-      font-weight: 500;
     }
 
     .pricing-features {
       list-style: none;
       margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
       flex: 1;
     }
 
     .pricing-features li {
+      font-size: 14.5px;
+      color: var(--text-secondary);
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
-      font-size: 14px;
-      color: var(--text-secondary);
     }
 
-    .pricing-features svg {
-      flex-shrink: 0;
+    .pricing-features li svg {
       color: var(--success);
+      flex-shrink: 0;
     }
 
-    /* Support & Setup Guide */
     .support-card {
-      background: var(--surface-card);
+      background-color: var(--surface-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
-      padding: 32px;
-      margin-bottom: 24px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
     }
 
     .support-card h3 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 10px;
+      color: var(--text-main);
     }
 
     .support-card ol {
       padding-left: 20px;
+      font-size: 14.5px;
       color: var(--text-secondary);
-      font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .support-card a {
+      color: var(--jira-blue);
+      text-decoration: underline;
     }
 
     .code-badge {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12.5px;
       background: var(--surface-subtle);
       border: 1px solid var(--border-light);
       padding: 2px 6px;
       border-radius: 4px;
-      font-size: 12px;
       color: var(--jira-blue);
     }
 
-    /* Footer */
     footer {
-      background: #ffffff;
+      background-color: #ffffff;
       border-top: 1px solid var(--border-light);
-      padding: 60px 0 30px;
+      padding: 60px 0 32px;
     }
 
     .footer-content {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 40px;
       gap: 40px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
     }
 
     .footer-brand {
-      max-width: 360px;
+      max-width: 380px;
     }
 
     .footer-links {
       display: flex;
-      gap: 48px;
-      flex-wrap: wrap;
+      gap: 60px;
     }
 
     .footer-col h4 {
-      font-size: 13px;
-      text-transform: uppercase;
+      font-size: 14px;
       font-weight: 700;
-      color: var(--text-muted);
+      color: var(--text-main);
+      text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 16px;
     }
 
     .footer-col ul {
       list-style: none;
-    }
-
-    .footer-col li {
-      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .footer-col a {
-      color: var(--text-secondary);
-      text-decoration: none;
       font-size: 14px;
-      transition: color 0.15s ease;
+      color: var(--text-secondary);
+      transition: color 0.15s;
     }
 
     .footer-col a:hover {
@@ -614,26 +699,56 @@
       padding-top: 24px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       font-size: 13px;
       color: var(--text-muted);
       flex-wrap: wrap;
       gap: 12px;
     }
 
+    @media (max-width: 992px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+    }
+
     @media (max-width: 768px) {
       .hero-title { font-size: 32px; }
       .nav-links { display: none; }
       .hero-subtitle { font-size: 16px; }
+      .features-grid { grid-template-columns: 1fr; }
     }
   </style>
+
+  
+  <script>
+    (function() {
+      try {
+        var pref = localStorage.getItem('bugagent_lang_pref');
+        var visited = sessionStorage.getItem('bugagent_lang_detected');
+        if (!visited) {
+          sessionStorage.setItem('bugagent_lang_detected', 'true');
+          var target = pref;
+          if (!target) {
+            var nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (nav.indexOf('de') === 0) target = 'de';
+            else if (nav.indexOf('pl') === 0) target = 'pl';
+            else if (nav.indexOf('es') === 0) target = 'es';
+            else if (nav.indexOf('fr') === 0) target = 'fr';
+            else if (nav.indexOf('ja') === 0) target = 'ja';
+          }
+          if (target && target !== 'en') {
+            window.location.replace('./' + target + '/');
+          }
+        }
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body>
 
   <!-- Navigation -->
   <header>
     <div class="container navbar">
-      <a href="#" class="brand">
+      <a href="./" class="brand">
         <img src="assets/icon-128.png" alt="BugAgent AI Logo">
         <div class="brand-text">
           <span class="brand-title">BugAgent AI</span>
@@ -647,13 +762,32 @@
         <li><a href="#support">Setup & Support</a></li>
         <li><a href="https://gist.github.com/cvqprs/127c0052032d3205fc83a11eb70ce0f9" target="_blank" rel="noopener">Privacy Policy</a></li>
       </ul>
-      <a href="https://chromewebstore.google.com/detail/ifligmhoakpphcdinajnmefdopaallbl" class="btn btn-primary" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-          <circle cx="12" cy="12" r="4"/>
-        </svg>
-        Add to Chrome
-      </a>
+      <div class="nav-actions">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Select Language">
+            <span>🇬🇧</span>
+            <span>EN</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="lang-menu" id="langMenu">
+                        <a href="./" class="lang-option active" data-lang="en"><span>🇬🇧</span> <span>English</span></a>
+            <a href="./de/" class="lang-option " data-lang="de"><span>🇩🇪</span> <span>Deutsch</span></a>
+            <a href="./pl/" class="lang-option " data-lang="pl"><span>🇵🇱</span> <span>Polski</span></a>
+            <a href="./es/" class="lang-option " data-lang="es"><span>🇪🇸</span> <span>Español</span></a>
+            <a href="./fr/" class="lang-option " data-lang="fr"><span>🇫🇷</span> <span>Français</span></a>
+            <a href="./ja/" class="lang-option " data-lang="ja"><span>🇯🇵</span> <span>日本語</span></a>
+          </div>
+        </div>
+
+        <a href="https://chromewebstore.google.com/detail/ifligmhoakpphcdinajnmefdopaallbl" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4"/>
+          </svg>
+          Add to Chrome
+        </a>
+      </div>
     </div>
   </header>
 
@@ -661,21 +795,20 @@
   <section class="hero">
     <div class="container">
       <div class="badge-pill">
-        <span>🟢 NEW IN v1.4.0: OPENAI GPT-4o, FULL DARK MODE &amp; AUTO-SPECS</span>
+        <span>🟢 NEW IN v1.4.0: OPENAI GPT-4o, FULL DARK MODE & AUTO-SPECS</span>
         <span>•</span>
         <span>STRICT PRIVACY (BYOK)</span>
       </div>
       <h1 class="hero-title">Automate Your Jira Bug Reports in Seconds with <span>BugAgent AI</span></h1>
       <p class="hero-subtitle">
-        The autonomous AI QA agent for QA Engineers, Software Testers, and Product Managers. 
-        Capture visual bugs, highlight defects, analyze with Google Gemini or OpenAI Vision, and create rich Jira tickets without ever leaving your active tab.
+        The autonomous AI QA agent for QA Engineers, Software Testers, and Product Managers. Capture visual bugs, highlight defects, analyze with Google Gemini or OpenAI Vision, and create rich Jira tickets without ever leaving your active tab.
       </p>
       <div class="hero-actions">
         <a id="install" href="https://chromewebstore.google.com/detail/ifligmhoakpphcdinajnmefdopaallbl" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4"/></svg>
-          Install on Chrome (Free Tier)
+          Add to Chrome — It's Free
         </a>
-        <a href="#screenshots" class="btn btn-outline btn-lg">View Screenshots</a>
+        <a href="#screenshots" class="btn btn-outline btn-lg">View Interactive Demo</a>
       </div>
 
       <!-- Main Showcase Mockup -->
@@ -686,7 +819,7 @@
             <div class="browser-dot dot-yellow"></div>
             <div class="browser-dot dot-green"></div>
           </div>
-          <div class="browser-url-bar">https://acme-store.com/checkout • Testing with BugAgent AI (OpenAI &amp; Gemini)</div>
+          <div class="browser-url-bar">https://acme-store.com/checkout • Testing with BugAgent AI (OpenAI & Gemini)</div>
         </div>
         <img src="assets/screenshot-1-visual-bug-capture-1280x800.jpg" alt="BugAgent AI Visual Bug Capture with OpenAI and Gemini in Chrome">
       </div>
@@ -697,9 +830,9 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">Powerful QA Architecture</div>
-        <h2 class="section-title">Built for High-Velocity Software Testing</h2>
-        <p class="section-desc">Eliminate manual copy-pasting, screenshot resizing, and repetitive issue descriptions. BugAgent AI does the heavy lifting for you.</p>
+        <div class="section-tag">Product Capabilities</div>
+        <h2 class="section-title">Built for Modern QA Teams & Software Testers</h2>
+        <p class="section-desc">Everything you need to capture, analyze, annotate, and report visual regressions and software defects without friction.</p>
       </div>
 
       <div class="features-grid">
@@ -708,8 +841,8 @@
           <div class="feature-icon-badge">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
-          <h3>One-Click Capture &amp; Global Shortcuts</h3>
-          <p>Capture the visible tab instantly with a single button, or use global keyboard shortcuts: <strong>⌘+Shift+S</strong> (macOS) and <strong>Alt+Shift+S</strong> (Windows &amp; Linux). Supports clipboard paste (Ctrl+V / Cmd+V).</p>
+          <h3>One-Click Capture & Global Shortcuts</h3>
+          <p>Capture the visible tab instantly with a single button, or use global keyboard shortcuts: <strong>⌘+Shift+S</strong> (macOS) and <strong>Alt+Shift+S</strong> (Windows & Linux). Supports clipboard paste (Ctrl+V / Cmd+V).</p>
         </div>
 
         <!-- Feature 2 -->
@@ -717,8 +850,8 @@
           <div class="feature-icon-badge">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <h3>Dual AI Vision Engine (Gemini &amp; OpenAI)</h3>
-          <p>Choose between Google Gemini (3.8 Flash) for instant speed or OpenAI (GPT-4o &amp; GPT-4o-mini) for complex UI analysis. Switch models with an instant 1-click segmented toggle right in the bug creator.</p>
+          <h3>Dual AI Vision Engine (Gemini & OpenAI)</h3>
+          <p>Choose between Google Gemini (3.8 Flash) for instant speed or OpenAI (GPT-4o & GPT-4o-mini) for complex UI analysis. Generates root-cause hypotheses, steps to reproduce, and expected results in 6 languages.</p>
         </div>
 
         <!-- Feature 3 -->
@@ -727,7 +860,7 @@
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>Auto-Environment Specs for Jira</h3>
-          <p>No more "Works on my machine" rejections. Automatically detects client OS, browser version, viewport, screen resolution, and Retina scaling, formatting a clean Jira Wiki Markup table in 6 languages.</p>
+          <p>Automatically detects and formats operating system, browser version, viewport size, and retina scaling into a clean, ready-to-read Jira Wiki table with zero manual effort.</p>
         </div>
 
         <!-- Feature 4 -->
@@ -735,8 +868,8 @@
           <div class="feature-icon-badge">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </div>
-          <h3>Full Dark Mode &amp; Sleek Theme</h3>
-          <p>Work comfortably in any lighting environment with our seamless midnight dark theme. Automatically matches your system preferences or toggles instantly with the ☀️/🌙 header button.</p>
+          <h3>Full Dark Mode & Sleek Theme</h3>
+          <p>Designed for comfortable long QA testing sessions. Switch instantly between vibrant Light Mode and battery-saving Dark Mode with a dedicated header toggle.</p>
         </div>
 
         <!-- Feature 5 -->
@@ -744,8 +877,8 @@
           <div class="feature-icon-badge">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
           </div>
-          <h3>Built-in Annotator &amp; GDPR Blur</h3>
-          <p>Draw red boxes, callout arrows, and text notes. Use the one-click Pixelate / Blur brush to redact sensitive passwords, customer emails, and PII before uploading to Jira.</p>
+          <h3>Built-in Annotator & GDPR Blur</h3>
+          <p>Draw rectangles, arrows, text callouts, or blur sensitive customer data (PII, tokens, emails) directly on your screenshot before sending anything to Jira.</p>
         </div>
 
         <!-- Feature 6 -->
@@ -753,8 +886,8 @@
           <div class="feature-icon-badge">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>100% BYOK &amp; Zero-Telemetry Privacy</h3>
-          <p>Bring Your Own Key: Your Jira tokens, Gemini keys, and OpenAI keys stay exclusively inside your browser's local storage. Your testing data travels directly to Jira with zero tracking servers.</p>
+          <h3>100% BYOK & Zero-Telemetry Privacy</h3>
+          <p>Bring Your Own Keys (BYOK). All Jira credentials, OpenAI keys, and Gemini tokens remain securely encrypted in your browser's chrome.storage.local. Zero tracking.</p>
         </div>
       </div>
     </div>
@@ -772,9 +905,9 @@
       <div class="showcase-tabs">
         <button class="tab-btn active" onclick="switchTab(0)">1. Visual Bug Capture (AI Switcher)</button>
         <button class="tab-btn" onclick="switchTab(1)">2. 1-Minute Onboarding</button>
-        <button class="tab-btn" onclick="switchTab(2)">3. Multi-AI &amp; Jira Settings</button>
+        <button class="tab-btn" onclick="switchTab(2)">3. Multi-AI & Jira Settings</button>
         <button class="tab-btn" onclick="switchTab(3)">4. Recent Jira Issues</button>
-        <button class="tab-btn" onclick="switchTab(4)">5. Knowledge Base &amp; Shortcuts</button>
+        <button class="tab-btn" onclick="switchTab(4)">5. Knowledge Base & Shortcuts</button>
       </div>
 
       <div class="showcase-display">
@@ -791,45 +924,45 @@
   <section class="section" id="pricing">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">Transparent Pricing</div>
+        <div class="section-tag">Simple, Transparent Pricing</div>
         <h2 class="section-title">Start Free, Upgrade for Unlimited Power</h2>
-        <p class="section-desc">No credit card required to start testing. Generous monthly quota included for every tester.</p>
+        <p class="section-desc">Test and report bugs with full AI capabilities on the free tier, or unlock unlimited submissions for high-velocity QA workflows.</p>
       </div>
 
       <div class="pricing-grid">
         <!-- Free Plan -->
         <div class="pricing-card">
           <h3>Free Tier</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">Great for solo testers and occasional QA</p>
+          <p style="color: var(--text-muted); font-size: 14px;">Forever free • No credit card required</p>
           <div class="price">
             <span class="amount">$0</span>
-            <span class="period">/ month (forever)</span>
+            <span class="period">/ month</span>
           </div>
           <ul class="pricing-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>15 Jira bug reports</strong> per month</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Full Gemini &amp; OpenAI Vision AI Analysis</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Auto-Environment Specs &amp; Shortcuts</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Full Dark Mode &amp; GDPR Blur</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Jira Cloud &amp; Server/DC support</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>15 bug submissions</strong> per month</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Full Gemini & OpenAI Vision AI Analysis</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Auto-Environment Specs & Shortcuts</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Full Dark Mode & GDPR Blur</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Jira Cloud & Server/DC support</li>
           </ul>
           <a href="https://chromewebstore.google.com/detail/ifligmhoakpphcdinajnmefdopaallbl" class="btn btn-outline" style="width: 100%;" target="_blank" rel="noopener">Get Started Free</a>
         </div>
 
         <!-- PRO Plan -->
         <div class="pricing-card featured">
-          <div class="popular-tag">Most Popular</div>
-          <h3>PRO Member</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">For active QA Leads, Engineers and Teams</p>
+          <div class="popular-tag">MOST POPULAR</div>
+          <h3>PRO Plan</h3>
+          <p style="color: var(--text-muted); font-size: 14px;">Billed monthly • Cancel anytime</p>
           <div class="price">
             <span class="amount">$8.99</span>
             <span class="period">/ month</span>
           </div>
           <ul class="pricing-features">
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>Unlimited bug submissions</strong> (No monthly cap)</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Unlimited Gemini &amp; OpenAI Vision analyses</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Unlimited Gemini & OpenAI Vision analyses</li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Golden ★ PRO badge in extension header</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Priority feature updates &amp; releases</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Powered securely by Stripe &amp; ExtensionPay</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Priority feature updates & releases</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Powered securely by Stripe & ExtensionPay</li>
           </ul>
           <a href="https://chromewebstore.google.com/detail/ifligmhoakpphcdinajnmefdopaallbl" class="btn btn-primary" style="width: 100%;" target="_blank" rel="noopener">Upgrade to PRO</a>
         </div>
@@ -841,9 +974,9 @@
   <section class="section" id="support" style="background-color: #ffffff; border-top: 1px solid var(--border-light);">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">Documentation & Help</div>
-        <h2 class="section-title">Quick Setup & Support</h2>
-        <p class="section-desc">Get up and running in less than 2 minutes. Need assistance? We're here to help.</p>
+        <div class="section-tag">Quick Start Guide</div>
+        <h2 class="section-title">Setup & Connectivity Instructions</h2>
+        <p class="section-desc">Follow these simple guides to connect BugAgent AI to your Atlassian Jira workspace and AI engines in under 2 minutes.</p>
       </div>
 
       <div style="max-width: 860px; margin: 0 auto;">
@@ -851,11 +984,13 @@
         <div class="support-card">
           <h3>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--jira-blue)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
-            How to configure your Jira Connection
+            How to connect Jira Cloud & Server/Data Center
           </h3>
           <ol>
-            <li><strong>Jira Server / Data Center (PAT):</strong> Open Jira &rarr; click your profile avatar &rarr; select <strong>Profile</strong> &rarr; click <strong>Personal Access Tokens</strong> &rarr; click <strong>Create token</strong>. In the extension Settings, choose <span class="code-badge">Personal Access Token (PAT)</span>, paste your token, and click <strong>Test Jira Connection</strong>.</li>
-            <li><strong>Jira Cloud (*.atlassian.net):</strong> Visit your <a href="https://id.atlassian.com/manage-profile/security/api-tokens" target="_blank" rel="noopener">Atlassian API Tokens</a> page &rarr; click <strong>Create API token</strong>. In Settings, select <span class="code-badge">Basic Auth</span>, enter your Atlassian Email and token, then save.</li>
+            <li>Open the extension side panel and go to <strong>Settings</strong> &rarr; <strong>Jira Connection</strong>.</li>
+            <li>Enter your Jira Instance URL (e.g., <span class="code-badge">https://your-company.atlassian.net</span> or custom domain).</li>
+            <li>For Jira Cloud: Enter your Atlassian account email and an <strong>API Token</strong> created at <a href="https://id.atlassian.com/manage-profile/security/api-tokens" target="_blank" rel="noopener">id.atlassian.com</a>.<br>For Server/Data Center: Select <strong>Personal Access Token (PAT)</strong> and paste your token.</li>
+            <li>Click <strong>Test Jira Connection</strong>. Once verified, click <strong>Save Settings</strong>.</li>
           </ol>
         </div>
 
@@ -863,12 +998,12 @@
         <div class="support-card">
           <h3>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--jira-blue)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            How to get your free Google Gemini API Key
+            How to get your Google Gemini API Key
           </h3>
           <ol>
-            <li>Visit <strong><a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio (aistudio.google.com)</a></strong> and sign in with your Google account.</li>
-            <li>Click <strong>Get API key</strong> &rarr; <strong>Create API key</strong>.</li>
-            <li>Copy your key (starts with <span class="code-badge">AIzaSy...</span>), paste it into Settings &rarr; <strong>Google Gemini API Key</strong>, and click <strong>Save Settings</strong>.</li>
+            <li>Visit <strong><a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Google AI Studio (aistudio.google.com)</a></strong> and sign in with your Google account.</li>
+            <li>Click <strong>Create API key</strong>, select your Google Cloud project (or generate a default one), and copy the generated key.</li>
+            <li>Paste the key into Settings &rarr; <strong>Gemini Vision Key</strong>, and click <strong>Save Settings</strong>.</li>
           </ol>
         </div>
 
@@ -876,7 +1011,7 @@
         <div class="support-card">
           <h3>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--jira-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            How to get your OpenAI API Key (GPT-4o &amp; GPT-4o-mini)
+            How to get your OpenAI API Key (GPT-4o & GPT-4o-mini)
           </h3>
           <ol>
             <li>Visit the <strong><a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">OpenAI Developer Platform (platform.openai.com)</a></strong> and sign in or create an account.</li>
@@ -889,13 +1024,15 @@
         <div class="support-card" style="border: 1px dashed var(--jira-blue); background-color: var(--jira-blue-subtle);">
           <h3 style="color: var(--jira-blue);">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Direct Developer Support
+            Need Assistance or Found a Bug?
           </h3>
           <p style="color: var(--text-secondary); margin-bottom: 12px;">
-            Have questions, feature suggestions, or need assistance connecting your custom Jira workflow? Contact developer support directly:
+            Our team actively monitors support requests and issue submissions. If you encounter any bugs, API authentication issues, or have a feature request, please submit an issue on our GitHub repository.
           </p>
           <p>
-            📧 <strong>Email:</strong> <a href="mailto:cvqprs@gmail.com" style="color: var(--jira-blue); font-weight: 600; text-decoration: underline;">cvqprs@gmail.com</a>
+            <a href="https://github.com/cvqprs/jira-bug-snapper/issues" target="_blank" rel="noopener" class="btn btn-outline" style="background:#fff;">
+              Open Issue on GitHub
+            </a>
           </p>
         </div>
       </div>
@@ -907,7 +1044,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <a href="#" class="brand" style="margin-bottom: 14px;">
+          <a href="./" class="brand" style="margin-bottom: 14px;">
             <img src="assets/icon-128.png" alt="BugAgent AI Logo">
             <div class="brand-text">
               <span class="brand-title">BugAgent AI</span>
@@ -915,13 +1052,13 @@
             </div>
           </a>
           <p style="color: var(--text-muted); font-size: 14px;">
-            The autonomous AI QA agent that automates defect reporting with Google Gemini &amp; OpenAI Vision AI into Atlassian Jira.
+            The autonomous AI QA agent that automates defect reporting with Google Gemini & OpenAI Vision AI into Atlassian Jira.
           </p>
         </div>
 
         <div class="footer-links">
           <div class="footer-col">
-            <h4>Product</h4>
+            <h4>Quick Links</h4>
             <ul>
               <li><a href="#features">Features</a></li>
               <li><a href="#screenshots">Screenshots</a></li>
@@ -930,10 +1067,10 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Support & Legal</h4>
+            <h4>Legal & Security</h4>
             <ul>
-              <li><a href="#support">Setup Guide</a></li>
-              <li><a href="mailto:cvqprs@gmail.com">Contact Support</a></li>
+              <li><a href="#support">Setup & Support</a></li>
+              <li><a href="mailto:cvqprs@gmail.com">cvqprs@gmail.com</a></li>
               <li><a href="https://gist.github.com/cvqprs/127c0052032d3205fc83a11eb70ce0f9" target="_blank" rel="noopener">Privacy Policy</a></li>
             </ul>
           </div>
@@ -941,8 +1078,8 @@
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 BugAgent AI. All rights reserved.</div>
-        <div>Built for Atlassian Jira & Google Chrome. Powered by Stripe.</div>
+        <div>&copy; 2026 BugAgent AI. All rights reserved. Built for QA teams worldwide.</div>
+        <div>BugAgent AI is an independent product and is not affiliated with, endorsed by, or sponsored by Atlassian, Google, or OpenAI. All product names, logos, and brands are property of their respective owners.</div>
       </div>
     </div>
   </footer>
@@ -969,6 +1106,29 @@
         }
       }
     }
+
+    // Language Dropdown Interactive Toggle
+    document.addEventListener('click', function(e) {
+      const btn = document.getElementById('langBtn');
+      const menu = document.getElementById('langMenu');
+      if (btn && menu) {
+        if (btn.contains(e.target)) {
+          menu.classList.toggle('show');
+        } else if (!menu.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      }
+    });
+
+    // Save language choice to localStorage on click
+    document.querySelectorAll('.lang-option').forEach(function(el) {
+      el.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        if (lang) {
+          localStorage.setItem('bugagent_lang_pref', lang);
+        }
+      });
+    });
   </script>
 </body>
 </html>

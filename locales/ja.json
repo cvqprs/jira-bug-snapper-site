@@ -1,0 +1,115 @@
+{
+  "lang_code": "ja",
+  "lang_name": "日本語",
+  "lang_flag": "🇯🇵",
+  "meta_title": "BugAgent AI - 自律型AI QAエージェント & Jiraバグ報告ツール",
+  "meta_desc": "ソフトウェアのバグ報告を自動化。画面キャプチャ、Google Gemini & OpenAI Visionによる解析、そして数秒でのJiraチケット作成を実現します。",
+  "og_title": "BugAgent AI - 自律型AI QAエージェント & Jiraバグ報告ツール",
+  "og_desc": "画面キャプチャ、ネットワークエラー検知、Gemini & OpenAI によるAI解析、リッチなJiraチケットを瞬時に作成。",
+  
+  "brand_badge": "スマートQAアシスタント",
+  "nav_features": "機能",
+  "nav_screenshots": "画面イメージ",
+  "nav_pricing": "料金プラン",
+  "nav_support": "設定とサポート",
+  "nav_privacy": "プライバシーポリシー",
+  "btn_add_to_chrome": "Chromeに追加",
+
+  "hero_badge": "🟢 v1.4.0 新機能: OPENAI GPT-4o、ダークモード、スペック自動検出",
+  "hero_badge_privacy": "完全なプライバシー (BYOK)",
+  "hero_title_prefix": "BugAgent AI で Jira のバグ報告を数秒で",
+  "hero_title_highlight": "自動化する",
+  "hero_subtitle": "QAエンジニア、ソフトウェアテスター、プロダクトマネージャーのための自律型AI QAエージェント。テスト中のタブを離れることなく、画面上の不具合をキャプチャし、Google Gemini や OpenAI Vision で解析、詳細なJiraチケットを瞬時に作成します。",
+  "hero_cta_free": "Chromeに追加 — 無料",
+  "hero_cta_demo": "インタラクティブデモを見る",
+  "hero_url_bar": "https://acme-store.com/checkout • BugAgent AI でテスト中 (OpenAI & Gemini)",
+
+  "features_tag": "主な機能と特徴",
+  "features_title": "現代のQAチームとソフトウェアテスターのために構築",
+  "features_desc": "UIのリグレッションやソフトウェアの不具合をシームレスにキャプチャ、解析、注釈付け、報告するために必要なすべてが揃っています。",
+
+  "feat1_title": "ワンクリックキャプチャとグローバルショートカット",
+  "feat1_desc": "表示中のタブをワンクリックで即座にキャプチャ。またはグローバルキーボードショートカット：<strong>⌘+Shift+S</strong>（macOS）および <strong>Alt+Shift+S</strong>（Win/Linux）を利用可能。クリップボードからの貼り付け（Ctrl+V / Cmd+V）にも対応。",
+
+  "feat2_title": "デュアル Vision AI エンジン（Gemini & OpenAI）",
+  "feat2_desc": "高速な応答性を誇る Google Gemini（3.8 Flash）と、高度なUI解析を行う OpenAI（GPT-4o & GPT-4o-mini）を瞬時に切り替え。根本原因の仮説、再現手順、期待される結果を6言語で自動生成します。",
+
+  "feat3_title": "Jira向け動作環境スペックの自動検出",
+  "feat3_desc": "OS、ブラウザのバージョン、ビューポート解像度、Retinaスケーリング比率を自動抽出し、手入力不要で美しいJira Wiki形式のテーブルとして整形します。",
+
+  "feat4_title": "完全なダークモードと洗練されたUI",
+  "feat4_desc": "長時間のQAテストセッションでも目に優しい設計。ヘッダーの専用トグルで、明るいライトモードとバッテリー消費を抑えるダークモードをワンタッチで切り替えられます。",
+
+  "feat5_title": "内蔵アノテーションとGDPR準拠ぼかし機能",
+  "feat5_desc": "Jiraに送信する前に、スクリーンショット上に矩形、矢印、テキスト注釈を描画したり、顧客の機密データ（個人情報、トークン、メールアドレス）を直接ぼかすことができます。",
+
+  "feat6_title": "100% BYOK & テレメトリゼロのプライバシー設計",
+  "feat6_desc": "ユーザー自身のAPIキーを使用（BYOK）。すべてのJira認証情報、OpenAIキー、Geminiトークンは、ブラウザ内の chrome.storage.local に安全に暗号化保存され、外部へ送信されません。",
+
+  "showcase_tag": "インタラクティブプレビュー",
+  "showcase_title": "BugAgent AI の実際の動作を見る",
+  "showcase_desc": "テスト対象の画面を遮ることなく、Google Chrome の常駐サイドパネル内にネイティブに収まるよう設計されています。",
+  "tab0_title": "1. バグキャプチャ (AI切替)",
+  "tab1_title": "2. 1分で終わる初期設定",
+  "tab2_title": "3. Multi-AI & Jira設定",
+  "tab3_title": "4. 最近作成したJiraチケット",
+  "tab4_title": "5. ナレッジベースとショートカット",
+
+  "pricing_tag": "シンプルで透明な料金プラン",
+  "pricing_title": "まずは無料から。必要に応じて無制限へ",
+  "pricing_desc": "無料プランですべてのAI解析機能を備えたバグ報告を開始。ハイペースなQAワークフローには無制限プランが最適です。",
+
+  "free_tier_name": "無料プラン (Free Tier)",
+  "free_tier_price": "$0",
+  "free_tier_period": "/ 月",
+  "free_tier_note": "ずっと無料 • クレジットカード不要",
+  "free_feat_1": "毎月 <strong>15件のバグ報告</strong>",
+  "free_feat_2": "Gemini & OpenAI Vision AI による完全解析",
+  "free_feat_3": "動作環境スペック自動検出とショートカット",
+  "free_feat_4": "完全なダークモードとプライバシーぼかし",
+  "free_feat_5": "Jira Cloud および Server/DC 対応",
+  "free_cta": "無料で始める",
+
+  "pro_tier_badge": "一番人気",
+  "pro_tier_name": "PROプラン",
+  "pro_tier_price": "$8.99",
+  "pro_tier_period": "/ 月",
+  "pro_tier_note": "月額課金 • いつでも解約可能",
+  "pro_feat_1": "<strong>無制限のバグ報告</strong>（月間上限なし）",
+  "pro_feat_2": "Gemini & OpenAI Vision による無制限のAI解析",
+  "pro_feat_3": "拡張機能ヘッダーのゴールド ★ PRO バッジ",
+  "pro_feat_4": "新機能およびアップデートへの優先アクセス",
+  "pro_feat_5": "Stripe & ExtensionPay による安全な決済",
+  "pro_cta": "PROにアップグレード",
+
+  "support_tag": "クイックスタートガイド",
+  "support_title": "接続・初期設定ガイド",
+  "support_desc": "以下の簡単な手順に従って、BugAgent AI を Atlassian Jira ワークスペースおよび AI エンジンに2分以内に接続できます。",
+
+  "support_jira_title": "Jira Cloud および Server/Data Center への接続手順",
+  "support_jira_step1": "拡張機能のサイドパネルを開き、<strong>Settings（設定）</strong> &rarr; <strong>Jira Connection</strong> に移動します。",
+  "support_jira_step2": "Jira インスタンスのURL（例: <span class=\"code-badge\">https://your-company.atlassian.net</span> またはカスタムドメイン）を入力します。",
+  "support_jira_step3": "Jira Cloudの場合: Atlassianアカウントのメールアドレスと、<a href=\"https://id.atlassian.com/manage-profile/security/api-tokens\" target=\"_blank\" rel=\"noopener\">id.atlassian.com</a> で発行した <strong>APIトークン</strong> を入力します。<br>Server/Data Centerの場合: <strong>Personal Access Token (PAT)</strong> を選択してトークンを貼り付けます。",
+  "support_jira_step4": "<strong>Test Jira Connection</strong> をクリックし、接続確認後に <strong>Save Settings</strong> をクリックします。",
+
+  "support_gemini_title": "Google Gemini API キーの取得手順",
+  "support_gemini_step1": "<strong><a href=\"https://aistudio.google.com/app/apikey\" target=\"_blank\" rel=\"noopener\">Google AI Studio (aistudio.google.com)</a></strong> にアクセスし、Googleアカウントでログインします。",
+  "support_gemini_step2": "<strong>Create API key</strong> をクリックし、Google Cloudプロジェクトを選択して、生成されたキーをコピーします。",
+  "support_gemini_step3": "拡張機能の設定画面の <strong>Gemini Vision Key</strong> に貼り付け、<strong>Save Settings</strong> をクリックします。",
+
+  "support_openai_title": "OpenAI API キーの取得手順 (GPT-4o & GPT-4o-mini)",
+  "support_openai_step1": "<strong><a href=\"https://platform.openai.com/api-keys\" target=\"_blank\" rel=\"noopener\">OpenAI Developer Platform (platform.openai.com)</a></strong> にアクセスしてログインします。",
+  "support_openai_step2": "<strong>Create new secret key</strong> をクリックし、識別名（例: <em>BugAgent AI</em>）を入力して <strong>Create secret key</strong> をクリックします。",
+  "support_openai_step3": "キー（<span class=\"code-badge\">sk-...</span> で始まる文字列）をコピーし、設定画面の <strong>OpenAI Vision Key</strong> に貼り付けて <strong>Save Settings</strong> をクリックします。",
+
+  "support_help_title": "サポートのお問い合わせまたはバグ報告",
+  "support_help_text": "サポートチームが継続してリクエストを確認しています。不具合の発見や新機能のご要望がございましたら、GitHub リポジトリからお気軽にお問い合わせください。",
+  "support_help_cta": "GitHubでIssueを作成する",
+
+  "footer_tagline": "Google Gemini および OpenAI Vision AI を活用し、Atlassian Jira への不具合報告を自動化する自律型 AI QA エージェント。",
+  "footer_quick_links": "クイックリンク",
+  "footer_resources": "リソース",
+  "footer_legal": "法的情報とプライバシー",
+  "footer_disclaimer": "BugAgent AI は独立した製品であり、Atlassian、Google、OpenAI との提携、承認、スポンサーシップはありません。すべての製品名、ロゴ、ブランドは各所有者の商標です。",
+  "footer_rights": "All rights reserved. 世界中のQAチームのために開発されました。"
+}

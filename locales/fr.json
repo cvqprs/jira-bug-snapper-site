@@ -1,0 +1,115 @@
+{
+  "lang_code": "fr",
+  "lang_name": "Français",
+  "lang_flag": "🇫🇷",
+  "meta_title": "BugAgent AI - Agent Autonome de QA et Rapports de Bogues pour Jira",
+  "meta_desc": "Automatisez les rapports d'anomalies logicielles. Capturez des écrans, analysez les erreurs avec Google Gemini & OpenAI Vision et créez des tickets Jira en quelques secondes.",
+  "og_title": "BugAgent AI - Agent Autonome de QA et Rapports de Bogues pour Jira",
+  "og_desc": "Capturez des écrans, détectez les pannes réseau, analysez avec Gemini & OpenAI et créez des tickets Jira instantanément.",
+  
+  "brand_badge": "Assistant QA Intelligent",
+  "nav_features": "Fonctionnalités",
+  "nav_screenshots": "Captures",
+  "nav_pricing": "Tarifs",
+  "nav_support": "Guide & Support",
+  "nav_privacy": "Confidentialité",
+  "btn_add_to_chrome": "Ajouter à Chrome",
+
+  "hero_badge": "🟢 NOUVEAU DANS v1.4.0: OPENAI GPT-4o, MODE SOMBRE & AUTO-SPECS",
+  "hero_badge_privacy": "STRICTE CONFIDENTIALITÉ (BYOK)",
+  "hero_title_prefix": "Automatisez vos rapports de bogues Jira en quelques secondes avec",
+  "hero_title_highlight": "BugAgent AI",
+  "hero_subtitle": "L'agent autonome de QA propulsé par l'IA pour les ingénieurs QA, testeurs logiciels et chefs de produit. Capturez les anomalies visuelles, annotez les défauts, analysez avec Google Gemini ou OpenAI Vision et créez des tickets Jira complets sans quitter votre onglet actif.",
+  "hero_cta_free": "Ajouter à Chrome — C'est gratuit",
+  "hero_cta_demo": "Voir la démo interactive",
+  "hero_url_bar": "https://acme-store.com/checkout • Test en cours avec BugAgent AI (OpenAI & Gemini)",
+
+  "features_tag": "Capacités du Produit",
+  "features_title": "Conçu pour les équipes modernes de QA et testeurs",
+  "features_desc": "Tout ce dont vous avez besoin pour capturer, analyser, annoter et signaler les régressions visuelles et défauts logiciels sans friction.",
+
+  "feat1_title": "Capture en 1 clic & raccourcis clavier globaux",
+  "feat1_desc": "Capturez l'onglet actif instantanément d'un seul clic ou utilisez les raccourcis globaux : <strong>⌘+Shift+S</strong> (macOS) et <strong>Alt+Shift+S</strong> (Windows & Linux). Prise en charge du copier-coller (Ctrl+V / Cmd+V).",
+
+  "feat2_title": "Double moteur Vision AI (Gemini & OpenAI)",
+  "feat2_desc": "Basculez entre Google Gemini (3.8 Flash) pour une rapidité immédiate et OpenAI (GPT-4o & GPT-4o-mini) pour des analyses d'interface poussées. Génère les hypothèses de causes, étapes de reproduction et résultats attendus en 6 langues.",
+
+  "feat3_title": "Spécifications d'environnement automatiques pour Jira",
+  "feat3_desc": "Détecte et formate automatiquement l'OS, la version du navigateur, la taille du viewport et le scaling Retina dans un tableau propre Jira Wiki sans aucune saisie manuelle.",
+
+  "feat4_title": "Mode sombre complet & interface soignée",
+  "feat4_desc": "Pensé pour le confort visuel lors des longues sessions de tests. Basculez en un instant entre le mode clair et le mode sombre grâce au sélecteur dédié dans l'en-tête.",
+
+  "feat5_title": "Outil d'annotation & floutage RGPD",
+  "feat5_desc": "Tracez des rectangles, flèches, annotations textuelles ou floutez les données sensibles (RGPD/PII, tokens, e-mails) directement sur votre capture d'écran avant l'envoi vers Jira.",
+
+  "feat6_title": "100% BYOK & confidentialité sans télémétrie",
+  "feat6_desc": "Apportez vos propres clés d'API (BYOK). Tous vos identifiants Jira, clés OpenAI et jetons Gemini restent chiffrés localement dans votre navigateur (chrome.storage.local). Aucun suivi.",
+
+  "showcase_tag": "Aperçu Interactif",
+  "showcase_title": "Découvrez BugAgent AI en action",
+  "showcase_desc": "S'intègre de manière native dans le panneau latéral (Side Panel) de Chrome sans masquer votre écran de test.",
+  "tab0_title": "1. Création de Bogue (Sélecteur AI)",
+  "tab1_title": "2. Démarrage en 1 minute",
+  "tab2_title": "3. Paramètres Multi-IA & Jira",
+  "tab3_title": "4. Tickets Récents Jira",
+  "tab4_title": "5. Base de Connaissances & Raccourcis",
+
+  "pricing_tag": "Tarification simple et transparente",
+  "pricing_title": "Commencez gratuitement, passez à la vitesse supérieure",
+  "pricing_desc": "Testez et signalez des anomalies avec toutes les capacités d'IA sur l'offre gratuite, ou débloquez les soumissions illimitées pour les équipes de QA à haut rythme.",
+
+  "free_tier_name": "Offre Gratuite",
+  "free_tier_price": "$0",
+  "free_tier_period": "/ mois",
+  "free_tier_note": "Gratuit pour toujours • Sans carte bancaire",
+  "free_feat_1": "<strong>15 soumissions de bogues</strong> par mois",
+  "free_feat_2": "Analyse Vision AI complète (Gemini & OpenAI)",
+  "free_feat_3": "Spécifications automatiques & raccourcis",
+  "free_feat_4": "Mode sombre complet & floutage RGPD",
+  "free_feat_5": "Support Jira Cloud & Server/Data Center",
+  "free_cta": "Commencer Gratuitement",
+
+  "pro_tier_badge": "LE PLUS POPULAIRE",
+  "pro_tier_name": "Offre PRO",
+  "pro_tier_price": "$8.99",
+  "pro_tier_period": "/ mois",
+  "pro_tier_note": "Facturation mensuelle • Résiliable à tout moment",
+  "pro_feat_1": "<strong>Soumissions de bogues illimitées</strong> (sans plafond)",
+  "pro_feat_2": "Analyses Vision AI Gemini & OpenAI illimitées",
+  "pro_feat_3": "Badge doré ★ PRO dans l'en-tête",
+  "pro_feat_4": "Accès prioritaire aux nouvelles fonctionnalités",
+  "pro_feat_5": "Paiements hautement sécurisés par Stripe & ExtensionPay",
+  "pro_cta": "Passer à PRO",
+
+  "support_tag": "Guide de Démarrage",
+  "support_title": "Instructions d'installation et de connexion",
+  "support_desc": "Suivez ces guides pour connecter BugAgent AI à votre espace Jira Atlassian et à vos moteurs d'IA en moins de 2 minutes.",
+
+  "support_jira_title": "Comment connecter Jira Cloud & Server/Data Center",
+  "support_jira_step1": "Ouvrez le panneau latéral de l'extension et accédez à <strong>Settings (Paramètres)</strong> &rarr; <strong>Jira Connection</strong>.",
+  "support_jira_step2": "Saisissez l'URL de votre instance Jira (ex. <span class=\"code-badge\">https://votre-entreprise.atlassian.net</span> ou votre domaine).",
+  "support_jira_step3": "Pour Jira Cloud : Entrez votre e-mail Atlassian et un <strong>Token API</strong> créé sur <a href=\"https://id.atlassian.com/manage-profile/security/api-tokens\" target=\"_blank\" rel=\"noopener\">id.atlassian.com</a>.<br>Pour Server/Data Center : Choisissez <strong>Personal Access Token (PAT)</strong> et collez votre jeton.",
+  "support_jira_step4": "Cliquez sur <strong>Test Jira Connection</strong>. Après validation, cliquez sur <strong>Save Settings</strong>.",
+
+  "support_gemini_title": "Comment obtenir votre clé d'API Google Gemini",
+  "support_gemini_step1": "Rendez-vous sur <strong><a href=\"https://aistudio.google.com/app/apikey\" target=\"_blank\" rel=\"noopener\">Google AI Studio (aistudio.google.com)</a></strong> et connectez-vous avec votre compte Google.",
+  "support_gemini_step2": "Cliquez sur <strong>Create API key</strong>, sélectionnez votre projet Google Cloud et copiez la clé générée.",
+  "support_gemini_step3": "Collez la clé dans les paramètres sous <strong>Gemini Vision Key</strong> et cliquez sur <strong>Save Settings</strong>.",
+
+  "support_openai_title": "Comment obtenir votre clé d'API OpenAI (GPT-4o & GPT-4o-mini)",
+  "support_openai_step1": "Visitez la plateforme <strong><a href=\"https://platform.openai.com/api-keys\" target=\"_blank\" rel=\"noopener\">OpenAI Developer Platform (platform.openai.com)</a></strong> et connectez-vous.",
+  "support_openai_step2": "Cliquez sur <strong>Create new secret key</strong>, donnez-lui un nom (ex. <em>BugAgent AI</em>) et cliquez sur <strong>Create secret key</strong>.",
+  "support_openai_step3": "Copiez votre clé (commençant par <span class=\"code-badge\">sk-...</span>), collez-la dans Settings &rarr; <strong>OpenAI Vision Key</strong> et cliquez sur <strong>Save Settings</strong>.",
+
+  "support_help_title": "Besoin d'aide ou un bogue à signaler ?",
+  "support_help_text": "Notre équipe suit de près les demandes d'assistance. Si vous rencontrez un bogue avec l'extension ou souhaitez proposer une amélioration, ouvrez un ticket sur notre dépôt GitHub.",
+  "support_help_cta": "Signaler un problème sur GitHub",
+
+  "footer_tagline": "L'agent autonome de QA qui automatise les signalements de bogues avec Google Gemini et OpenAI Vision directement dans Atlassian Jira.",
+  "footer_quick_links": "Liens Rapides",
+  "footer_resources": "Ressources",
+  "footer_legal": "Mentions Légales & RGPD",
+  "footer_disclaimer": "BugAgent AI est un produit indépendant et n'est affilié, approuvé ou sponsorisé ni par Atlassian, ni par Google, ni par OpenAI. Tous les noms de produits et logos appartiennent à leurs détenteurs respectifs.",
+  "footer_rights": "Tous droits réservés. Conçu pour les équipes de QA du monde entier."
+}

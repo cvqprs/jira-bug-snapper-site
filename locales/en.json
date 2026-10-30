@@ -1,0 +1,115 @@
+{
+  "lang_code": "en",
+  "lang_name": "English",
+  "lang_flag": "🇬🇧",
+  "meta_title": "BugAgent AI - Autonomous QA Agent & Bug Reporter for Jira",
+  "meta_desc": "Automate software defect reporting. Capture screens, detect network errors, analyze with Google Gemini and OpenAI Vision, and create rich Jira tickets in seconds.",
+  "og_title": "BugAgent AI - Autonomous QA Agent & Bug Reporter for Jira",
+  "og_desc": "Capture screens, detect network crashes, analyze with Gemini & OpenAI, and create Jira tickets instantly.",
+  
+  "brand_badge": "Smart QA Assistant",
+  "nav_features": "Features",
+  "nav_screenshots": "Screenshots",
+  "nav_pricing": "Pricing",
+  "nav_support": "Setup & Support",
+  "nav_privacy": "Privacy Policy",
+  "btn_add_to_chrome": "Add to Chrome",
+
+  "hero_badge": "🟢 NEW IN v1.4.0: OPENAI GPT-4o, FULL DARK MODE & AUTO-SPECS",
+  "hero_badge_privacy": "STRICT PRIVACY (BYOK)",
+  "hero_title_prefix": "Automate Your Jira Bug Reports in Seconds with",
+  "hero_title_highlight": "BugAgent AI",
+  "hero_subtitle": "The autonomous AI QA agent for QA Engineers, Software Testers, and Product Managers. Capture visual bugs, highlight defects, analyze with Google Gemini or OpenAI Vision, and create rich Jira tickets without ever leaving your active tab.",
+  "hero_cta_free": "Add to Chrome — It's Free",
+  "hero_cta_demo": "View Interactive Demo",
+  "hero_url_bar": "https://acme-store.com/checkout • Testing with BugAgent AI (OpenAI & Gemini)",
+
+  "features_tag": "Product Capabilities",
+  "features_title": "Built for Modern QA Teams & Software Testers",
+  "features_desc": "Everything you need to capture, analyze, annotate, and report visual regressions and software defects without friction.",
+
+  "feat1_title": "One-Click Capture & Global Shortcuts",
+  "feat1_desc": "Capture the visible tab instantly with a single button, or use global keyboard shortcuts: <strong>⌘+Shift+S</strong> (macOS) and <strong>Alt+Shift+S</strong> (Windows & Linux). Supports clipboard paste (Ctrl+V / Cmd+V).",
+
+  "feat2_title": "Dual AI Vision Engine (Gemini & OpenAI)",
+  "feat2_desc": "Choose between Google Gemini (3.8 Flash) for instant speed or OpenAI (GPT-4o & GPT-4o-mini) for complex UI analysis. Generates root-cause hypotheses, steps to reproduce, and expected results in 6 languages.",
+
+  "feat3_title": "Auto-Environment Specs for Jira",
+  "feat3_desc": "Automatically detects and formats operating system, browser version, viewport size, and retina scaling into a clean, ready-to-read Jira Wiki table with zero manual effort.",
+
+  "feat4_title": "Full Dark Mode & Sleek Theme",
+  "feat4_desc": "Designed for comfortable long QA testing sessions. Switch instantly between vibrant Light Mode and battery-saving Dark Mode with a dedicated header toggle.",
+
+  "feat5_title": "Built-in Annotator & GDPR Blur",
+  "feat5_desc": "Draw rectangles, arrows, text callouts, or blur sensitive customer data (PII, tokens, emails) directly on your screenshot before sending anything to Jira.",
+
+  "feat6_title": "100% BYOK & Zero-Telemetry Privacy",
+  "feat6_desc": "Bring Your Own Keys (BYOK). All Jira credentials, OpenAI keys, and Gemini tokens remain securely encrypted in your browser's chrome.storage.local. Zero tracking.",
+
+  "showcase_tag": "Interactive Preview",
+  "showcase_title": "See BugAgent AI in Action",
+  "showcase_desc": "Designed to fit natively inside Google Chrome's persistent side panel without covering your testing screen.",
+  "tab0_title": "1. Visual Bug Capture (AI Switcher)",
+  "tab1_title": "2. 1-Minute Onboarding",
+  "tab2_title": "3. Multi-AI & Jira Settings",
+  "tab3_title": "4. Recent Jira Issues",
+  "tab4_title": "5. Knowledge Base & Shortcuts",
+
+  "pricing_tag": "Simple, Transparent Pricing",
+  "pricing_title": "Start Free, Upgrade for Unlimited Power",
+  "pricing_desc": "Test and report bugs with full AI capabilities on the free tier, or unlock unlimited submissions for high-velocity QA workflows.",
+
+  "free_tier_name": "Free Tier",
+  "free_tier_price": "$0",
+  "free_tier_period": "/ month",
+  "free_tier_note": "Forever free • No credit card required",
+  "free_feat_1": "<strong>15 bug submissions</strong> per month",
+  "free_feat_2": "Full Gemini & OpenAI Vision AI Analysis",
+  "free_feat_3": "Auto-Environment Specs & Shortcuts",
+  "free_feat_4": "Full Dark Mode & GDPR Blur",
+  "free_feat_5": "Jira Cloud & Server/DC support",
+  "free_cta": "Get Started Free",
+
+  "pro_tier_badge": "MOST POPULAR",
+  "pro_tier_name": "PRO Plan",
+  "pro_tier_price": "$8.99",
+  "pro_tier_period": "/ month",
+  "pro_tier_note": "Billed monthly • Cancel anytime",
+  "pro_feat_1": "<strong>Unlimited bug submissions</strong> (No monthly cap)",
+  "pro_feat_2": "Unlimited Gemini & OpenAI Vision analyses",
+  "pro_feat_3": "Golden ★ PRO badge in extension header",
+  "pro_feat_4": "Priority feature updates & releases",
+  "pro_feat_5": "Powered securely by Stripe & ExtensionPay",
+  "pro_cta": "Upgrade to PRO",
+
+  "support_tag": "Quick Start Guide",
+  "support_title": "Setup & Connectivity Instructions",
+  "support_desc": "Follow these simple guides to connect BugAgent AI to your Atlassian Jira workspace and AI engines in under 2 minutes.",
+
+  "support_jira_title": "How to connect Jira Cloud & Server/Data Center",
+  "support_jira_step1": "Open the extension side panel and go to <strong>Settings</strong> &rarr; <strong>Jira Connection</strong>.",
+  "support_jira_step2": "Enter your Jira Instance URL (e.g., <span class=\"code-badge\">https://your-company.atlassian.net</span> or custom domain).",
+  "support_jira_step3": "For Jira Cloud: Enter your Atlassian account email and an <strong>API Token</strong> created at <a href=\"https://id.atlassian.com/manage-profile/security/api-tokens\" target=\"_blank\" rel=\"noopener\">id.atlassian.com</a>.<br>For Server/Data Center: Select <strong>Personal Access Token (PAT)</strong> and paste your token.",
+  "support_jira_step4": "Click <strong>Test Jira Connection</strong>. Once verified, click <strong>Save Settings</strong>.",
+
+  "support_gemini_title": "How to get your Google Gemini API Key",
+  "support_gemini_step1": "Visit <strong><a href=\"https://aistudio.google.com/app/apikey\" target=\"_blank\" rel=\"noopener\">Google AI Studio (aistudio.google.com)</a></strong> and sign in with your Google account.",
+  "support_gemini_step2": "Click <strong>Create API key</strong>, select your Google Cloud project (or generate a default one), and copy the generated key.",
+  "support_gemini_step3": "Paste the key into Settings &rarr; <strong>Gemini Vision Key</strong>, and click <strong>Save Settings</strong>.",
+
+  "support_openai_title": "How to get your OpenAI API Key (GPT-4o & GPT-4o-mini)",
+  "support_openai_step1": "Visit the <strong><a href=\"https://platform.openai.com/api-keys\" target=\"_blank\" rel=\"noopener\">OpenAI Developer Platform (platform.openai.com)</a></strong> and sign in or create an account.",
+  "support_openai_step2": "Click <strong>Create new secret key</strong>, give it an identifier name (e.g. <em>BugAgent AI</em>), and click <strong>Create secret key</strong>.",
+  "support_openai_step3": "Copy your key (starts with <span class=\"code-badge\">sk-...</span>), paste it into Settings &rarr; <strong>OpenAI Vision Key</strong>, and click <strong>Save Settings</strong>.",
+
+  "support_help_title": "Need Assistance or Found a Bug?",
+  "support_help_text": "Our team actively monitors support requests and issue submissions. If you encounter any bugs, API authentication issues, or have a feature request, please submit an issue on our GitHub repository.",
+  "support_help_cta": "Open Issue on GitHub",
+
+  "footer_tagline": "The autonomous AI QA agent that automates defect reporting with Google Gemini & OpenAI Vision AI into Atlassian Jira.",
+  "footer_quick_links": "Quick Links",
+  "footer_resources": "Resources",
+  "footer_legal": "Legal & Security",
+  "footer_disclaimer": "BugAgent AI is an independent product and is not affiliated with, endorsed by, or sponsored by Atlassian, Google, or OpenAI. All product names, logos, and brands are property of their respective owners.",
+  "footer_rights": "All rights reserved. Built for QA teams worldwide."
+}
