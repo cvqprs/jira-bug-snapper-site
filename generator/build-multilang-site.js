@@ -30,8 +30,8 @@ for (const lang of languages) {
   const assetsPath = isRoot ? 'assets/' : '../assets/';
   const homePath = isRoot ? './' : '../';
   const canonicalUrl = isRoot
-    ? 'https://cvqprs.github.io/jira-bug-snapper-site/'
-    : `https://cvqprs.github.io/jira-bug-snapper-site/${lang}/`;
+    ? 'https://bugagentai.com/'
+    : `https://bugagentai.com/${lang}/`;
 
   // Build Language Dropdown Menu Items
   const langMenuItems = languages.map(l => {
